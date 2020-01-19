@@ -1,0 +1,978 @@
+/* ===================================================
+    foundation
+======================================================*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*
+  BASE
+*/
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.btn_box {
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  width: 120px;
+  font-size: 0.75rem;
+  padding: 0.3rem 0;
+  border: 1px solid;
+  border-radius: 8px;
+  cursor: pointer;
+  color: rgb(8, 8, 8);
+}
+
+/* =================================================================
+  Layout
+==================================================================*/
+
+/*
+  header.php
+*/
+
+.header {
+  background-color: rgb(184, 227, 240);
+}
+
+.header_container {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 95%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header_title,
+.logout_box {
+  text-align: center;
+  width: 50%;
+}
+
+.top_link,
+.logout {
+  text-decoration: none;
+  color: rgb(8, 8, 8);
+  display: inline-block;
+  width: 100%;
+  max-width: 150px;
+  padding: 1rem 0;
+}
+
+.top_link:hover,
+.logout:hover {
+  color: #fff;
+  background-color: rgb(48, 48, 236);
+}
+
+/*
+  index.php(トップページ)
+*/
+
+.explain {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.table {
+  max-width: 400px;
+  margin: 1rem auto;
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+}
+
+.calender_head,
+.calender_foot {
+  background: #eee;
+}
+
+.calender_head {
+  padding: 0.75rem 0;
+}
+
+.today_link {
+  display: inline-block;
+  width: 100%;
+  padding: 0.75rem 0;
+}
+
+.week {
+  padding: 0.5rem 0.1rem;
+  text-align: center;
+}
+
+.title {
+  margin-top: 0.1rem;
+  background-color: rgb(255, 203, 211);
+  border-radius: 5px;
+  font-size: 0.6rem;
+}
+
+.sun,
+.youbi_0 a {
+  color: rgb(224, 19, 19);
+}
+
+.sat,
+.youbi_6 a {
+  color: rgb(47, 47, 216);
+}
+
+.today {
+  background-color: rgb(213, 242, 255);
+}
+
+.date {
+  vertical-align: top;
+  text-align: center;
+  width: 40px;
+  height: 45px;
+  padding: 0.1rem 0.1rem;
+}
+
+.date:hover {
+  background-color: rgb(176, 250, 176);
+}
+
+.gray {
+  color: #dedede;
+}
+
+.link_date {
+  color: #212121;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+/*
+  login.php
+*/
+
+.login_form {
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.login_dd {
+  text-align: center;
+  margin: 0.25rem 0 1rem;
+}
+
+.login_input {
+  padding: 0.4rem 0;
+  font-size: 100%;
+}
+
+.login_save {
+  text-align: center;
+}
+
+.login_submit_box {
+  margin-top: 1.25rem;
+}
+
+.login_submit {
+  max-width: 250px;
+}
+
+.normal_login {
+  color: #fff;
+  background-color: #08cddb;
+}
+
+.guest_login {
+  color: #fff;
+  background-color: #0b5bd4;
+}
+
+.error {
+  color: rgb(218, 87, 87);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.test_box {
+  width: 100%;
+  max-width: 300px;
+  margin: 2rem auto 0;
+  padding: 1rem 0;
+  border-radius: 8px;
+  background-color: rgb(238, 235, 235);
+  text-align: center;
+}
+
+.test_list_box {
+  margin: 0.5rem 0;
+}
+/*
+  todo/index.php
+*/
+
+.body_color {
+  background-color: rgb(241, 238, 238);
+  padding-bottom: 2rem;
+}
+
+.container {
+  max-width: 600px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.btn_container {
+  text-align: right;
+  padding-top: 1.5rem;
+}
+
+.back_btn_box {
+  width: 140px;
+  display: inline-block;
+}
+
+.modal_btn_box {
+  width: 140px;
+  display: inline-block;
+}
+
+.modal_btn {
+  border: 1px solid;
+  padding: 0.3rem 0.5rem;
+  font-size: 85%;
+  border-radius: 0.5rem;
+  background-color: rgb(217, 255, 173);
+  cursor: pointer;
+}
+
+.modal_btn:hover {
+  background-color: rgb(170, 245, 49);
+}
+
+.main_title {
+  width: 80%;
+  margin: 0% auto;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 2rem 0 0.25rem;
+  border-bottom: 2px solid rgb(25, 111, 161);
+}
+
+.form {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.todo_form,
+.done_form {
+  max-width: 400px;
+  padding-top: 2rem;
+}
+
+.todo_time_box,
+.done_time_box,
+.new_todo_box,
+.new_done_box {
+  margin: 0.25rem 0 1.25rem 1rem;
+}
+
+.todo_new_time,
+.done_new_time {
+  font-size: 100%;
+}
+
+.todo_time_box,
+.done_time_box,
+.new_todo_box,
+.new_done_box,
+.submit_todo_box,
+.submit_done_box {
+  width: 85%;
+}
+
+.new_todo,
+.new_done {
+  padding: 0.25rem 0;
+  border-radius: 3px;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  font-size: 100%;
+}
+
+.new_todo_error,
+.new_done_error {
+  margin-top: 0.25rem;
+  text-align: center;
+}
+
+.submit {
+  display: inline-block;
+  font-size: 100%;
+  border-style: none;
+  width: 100%;
+  padding: 0.6rem 0;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.design_todo_submit,
+.design_done_submit {
+  background-color: rgb(83, 78, 78);
+  color: white;
+  max-width: 360px;
+  margin-left: 1rem;
+}
+
+.todo_container,
+.done_container {
+  max-width: 1200px;
+}
+
+.todos,
+.dones {
+  margin: 2.5rem auto;
+}
+
+.todo_list,
+.done_list {
+  width: 100%;
+  max-width: 730px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}
+
+.todo_time,
+.done_time {
+  display: inline-block;
+  width: 15%;
+  max-width: 50px;
+  padding: 0.25rem 0;
+}
+
+.todo_row_box,
+.done_row_box {
+  display: inline-block;
+  width: 80%;
+  border-left: 1px solid rgba(128, 125, 125, 0.575);
+  border-bottom: 1px solid rgb(128, 125, 125);
+  padding: 0.25rem 0;
+}
+
+.todo_row,
+.done_row {
+  display: block;
+  width: 98%;
+  max-width: 285px;
+  padding: 0.5rem 0;
+  border-radius: 0.5rem;
+  margin: 0.5rem auto 0.25rem;
+}
+
+.todo_row {
+  background-color: #fff;
+}
+
+.done_row {
+  background-color: rgb(241, 238, 238);
+}
+
+.todo_title_box,
+.done_title_box {
+  width: 100%;
+  text-align: center;
+}
+
+.todo_title_box {
+  max-width: 170px;
+  padding-left: 0.5rem;
+}
+
+.done_title_box {
+  max-width: 160px;
+}
+
+.check_update {
+  font-size: 100%;
+  display: inline-block;
+  width: 10%;
+  cursor: pointer;
+}
+
+.todo_title {
+  display: inline-block;
+  text-align: center;
+  width: 80%;
+}
+
+.done_title {
+  word-wrap: break-word;
+}
+
+.todo_finish {
+  text-decoration: line-through;
+  color: rgb(199, 32, 32);
+}
+
+.link_title {
+  color: rgb(8, 8, 8);
+  text-decoration: underline;
+  word-wrap: break-word;
+}
+
+.todo_btn_layout,
+.done_btn_layout {
+  text-align: right;
+  margin-right: 1rem;
+}
+
+.todo_btn_box,
+.done_btn_box {
+  display: inline-block;
+  text-align: center;
+}
+
+.todo_row_btn,
+.done_row_btn {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  border-radius: 8px;
+  border-style: none;
+}
+
+.link_edit {
+  color: #fff;
+  background-color: rgb(30, 131, 189);
+}
+
+.delete_btn {
+  color: #fff;
+  background-color: rgb(212, 27, 27);
+}
+
+.shape_btn {
+  font-size: 100%;
+  padding: 0.3rem 0.6rem;
+}
+
+.back_color_box {
+  background-color: rgb(241, 238, 238);
+}
+
+.back_color {
+  background-color: #fff;
+}
+
+.back_color:hover {
+  background-color: #dadbe0;
+}
+
+.back_box {
+  margin-top: 2rem;
+}
+
+/*
+  modal
+*/
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(12, 12, 12, 0.7);
+  width: 100%;
+  height: 100%;
+  transform: translateY(-100%);
+  transition: transform 0.8s ease-in-out;
+}
+
+.is_modal_active {
+  transform: translate(0);
+}
+
+.modal_contents {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-200%);
+  transition: transform 0.8s ease-in-out;
+  width: 95%;
+  height: 90%;
+  overflow: scroll;
+  background-color: #fff;
+}
+
+.is_modal_contents_active {
+  transform: translate(-50%, -50%);
+  transition: 0.8s;
+}
+
+.close_box {
+  position: absolute;
+  top: 3px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.close {
+  display: inline-block;
+  position: relative;
+  margin: 0 20px 0 7px;
+  padding: 0;
+  width: 4px;
+  height: 20px;
+  background-color: #212121;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+.close::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -8px;
+  width: 20px;
+  height: 4px;
+  background-color: #212121;
+  margin-top: -2px;
+}
+
+/*
+  update_conf.php
+  update.php
+*/
+
+.conf_container {
+  background-color: rgb(241, 238, 238);
+  width: 100%;
+  max-width: 430px;
+  margin: 2rem auto 0;
+  border-radius: 16px;
+  padding: 1rem 1rem 2rem;
+  box-sizing: border-box;
+}
+
+.conf_title {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.todo_back {
+  background-color: #fff;
+  margin-left: 1rem;
+}
+
+.memo_conf_box {
+  text-align: center;
+}
+
+.memo_back {
+  background-color: #fff;
+  margin-left: 2rem;
+}
+
+.edit_done_text {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+/*
+  memo.php
+*/
+
+.memo_container {
+  padding-bottom: 2rem;
+}
+
+.memo_title_container {
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto 0.5rem;
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.memo_main_title {
+  width: 55%;
+  padding: 0;
+  margin: 0;
+}
+
+.explain {
+  padding: 1rem 0 1rem;
+  text-align: center;
+}
+
+.memo_form {
+  max-width: 400px;
+  text-align: center;
+}
+
+.memo_textarea {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+  font-size: 100%;
+}
+
+.submit_todo_box {
+  text-align: center;
+}
+
+.design_memo_submit {
+  background-color: rgb(83, 78, 78);
+  color: white;
+  max-width: 320px;
+}
+
+.list_one {
+  background-color: rgb(241, 238, 238);
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  margin: 2rem 0 2rem;
+}
+
+.ed_de_box {
+  text-align: right;
+  padding-top: 0.5rem;
+  padding-right: 1.5rem;
+}
+
+.edit_memo_box,
+.delete_memo_box {
+  display: inline-block;
+  padding: 0;
+}
+
+.edit_memo_box {
+  margin-right: 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  /*
+    index.php(トップページ)
+  */
+
+  .table {
+    max-width: 550px;
+  }
+
+  .calender_head,
+  .today_link {
+    padding: 1rem 0;
+  }
+
+  .title {
+    font-size: 0.9rem;
+  }
+
+  .date {
+    width: 60px;
+    height: 70px;
+    padding: 0.1rem 0.3rem;
+  }
+  /*
+    todo/index.php
+  */
+  .todo_form,
+  .done_form {
+    max-width: 90%;
+  }
+
+  .todo_form_dt,
+  .done_form_dt {
+    display: inline-block;
+    width: 20%;
+  }
+
+  .todo_time_box,
+  .done_time_box,
+  .new_todo_box,
+  .new_done_box {
+    display: inline-block;
+    width: 60%;
+    margin: 0 0 1.25rem 0;
+  }
+
+  .new_todo,
+  .new_done {
+    width: 360px;
+  }
+
+  .submit {
+    padding: 0.6rem;
+  }
+
+  .design_todo_submit,
+  .design_done_submit {
+    margin-left: 7rem;
+  }
+
+  .todo_row_box,
+  .done_row_box {
+    width: 85%;
+    max-width: 610px;
+    padding: 0 1rem 0 0.25rem;
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+  }
+
+  .done_row_box {
+    width: 85%;
+    max-width: 600px;
+  }
+
+  .todo_row,
+  .done_row {
+    margin-left: 0.5rem;
+    width: 100%;
+    padding: 0.5rem 0.25rem;
+  }
+
+  .done_row {
+    max-width: 275px;
+  }
+
+  .todo_title_box {
+    display: inline-block;
+    padding-left: 0;
+  }
+
+  .done_title_box {
+    display: inline-block;
+  }
+
+  .todo_btn_layout,
+  .done_btn_layout {
+    display: inline-block;
+    text-align: center;
+    margin-right: 0;
+  }
+
+  /*
+    login.php
+  */
+
+  .login_container {
+    max-width: 800px;
+  }
+
+  .login_form {
+    max-width: 450px;
+  }
+
+  .login_dt {
+    display: inline-block;
+    width: 25%;
+  }
+
+  .login_dd {
+    display: inline-block;
+    width: 70%;
+  }
+
+  .login_save {
+    margin-top: 1rem;
+  }
+
+  /*
+    update_conf.php
+  */
+
+  .conf_container {
+    max-width: 600px;
+    padding: 2rem 0 3rem 1rem;
+  }
+
+  .conf_title {
+    margin-bottom: 1.5rem;
+  }
+
+  .todo_back {
+    margin-left: 7.75rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .main {
+    display: flex;
+  }
+  .todo_all_container {
+    width: 50%;
+  }
+
+  .done_all_container {
+    width: 50%;
+    margin-top: 3.4rem;
+  }
+
+  .modal {
+    display: none;
+  }
+
+  .modal_contents {
+    position: static;
+    width: 100%;
+    height: 100%;
+    width: none;
+    transform: translate(0);
+  }
+
+  .close_box {
+    display: none;
+  }
+
+  .modal_btn_box {
+    display: none;
+  }
+}
