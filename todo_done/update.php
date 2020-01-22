@@ -2,7 +2,7 @@
 session_start();
 require_once(__DIR__ . '/../config/config.php');
 require_once(__DIR__ . '/../lib/functions.php');
-require_once(__DIR__ . '/../lib/Controller/Todo.php');
+require_once(__DIR__ . '/../lib/Controller/Todo_Done.php');
 
 $todoApp = new \MyApp\Todo();
 $doneApp = new \MyApp\Done();
@@ -42,10 +42,10 @@ if (isset($_SESSION['todo_id']) && isset($_SESSION['todo_conf'])) {
         <?php elseif ($_REQUEST['done_date']): ?>
         Doneリストのアップデート
         <?php elseif ($_REQUEST['todo_id']): ?>
-        メモのアップデート
+        Memoリストのアップデート
         <?php endif; ?>
     </title>
-    <link rel="stylesheet" href="../asset/css/todo.css">
+    <link rel="stylesheet" href="../asset/css/todo_done.css">
 </head>
 
 <body>

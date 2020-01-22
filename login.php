@@ -2,7 +2,7 @@
 session_start();
 require_once(__DIR__ . '/config/config.php');
 require_once(__DIR__ . '/lib/functions.php');
-require_once(__DIR__ . '/lib/Controller/Todo.php');
+require_once(__DIR__ . '/lib/Controller/Todo_Done.php');
 
 $todoApp = new MyApp\Todo();
 
@@ -65,7 +65,7 @@ $todoApp = new MyApp\Todo();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ログイン</title>
-    <link rel="stylesheet" href="asset/css/todo.css">
+    <link rel="stylesheet" href="asset/css/todo_done.css">
 </head>
 
 <body>
@@ -97,9 +97,11 @@ $todoApp = new MyApp\Todo();
                     </dd>
                 </dl>
                 <!-- 通常ログイン時 -->
-                <p class="login_submit_box"><input type="submit" class="submit login_submit normal_login" name="normal_login" value="ログイン"></p>
+                <p class="login_submit_box"><input type="submit" class="submit login_submit normal_login"
+                        name="normal_login" value="ログイン"></p>
                 <!-- ゲストログイン時 -->
-                <p class="login_submit_box"><input type="submit" class="submit login_submit guest_login" name="guest_login" value="ゲストユーザーとしてログイン"></p>
+                <p class="login_submit_box"><input type="submit" class="submit login_submit guest_login"
+                        name="guest_login" value="ゲストユーザーとしてログイン"></p>
                 <!-- CSRF対策 -->
                 <input type="hidden" class="token" name="token" value="<?= $_SESSION['token'] ?>">
             </form>

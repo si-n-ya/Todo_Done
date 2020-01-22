@@ -112,14 +112,17 @@ class Calender
         foreach ($period as $day) {
             // カレンダーの日付に予定を表示するためのSELECT文
             // calender_dateはformatから、user_idはsessionから取得
-            $sql = sprintf("SELECT * FROM todos WHERE calender_date=%d%d%d AND user_id=?", $day->format('Y'), $day->format('m'), $day->format('d'));
+            $sql = "SELECT * FROM todos WHERE calender_date=? AND user_id=?";
             $stmt = $this->_db->prepare($sql);
-            $stmt->execute([$_SESSION['id']]);
+            $stmt->execute([
+                $day->format('Y-n-j'),
+                $_SESSION['id']
+                ]);
             $calender = $stmt->fetch();
 
             // user_idとcalender_dateが一致したtodoテーブルのtitleカラムが空でなければ、3文字のみ取得。空だと、$titleを空にする
             if (!empty($calender['title'])) {
-                $title = mb_substr($calender['title'], 0, 3, "utf-8") . '...';
+                $title = mb_substr($calender['title'], 0, 3, "utf-8") . '&#133;';
             } else {
                 $title = '';
             }
@@ -130,11 +133,10 @@ class Calender
             }
             // $day->format('Y-m-d')(カレンダーの日付) と $today->format('Y-m-d')(今日の)日付が一致すれば、$todayClassに'today'を代入
             $todayClass = ($day->format('Y-m-d') === $today->format('Y-m-d')) ? 'today' : '';
-            // 土曜日と日曜日の日付の色を変えるため、<td>に$day->format("w")の数字で曜日毎にclass名を変える
-            // 今日の日付を分からせるため、今日の日付がforeachで来た時に、<td>のclass名に$todayClassの'today'をいれる
-            // 日付をクリックした時に、GETパラメーターのcalender_dateによって、日付毎のtodoを書けるようにする
-            // $day->format('d')で日付を表示し、$titleでtodoテーブルのtitleカラムの値を表示
-            $body .= sprintf('<td class="youbi_%d %s date"><a href="todo_done/index.php?calender_date=%d%d%d" class="link_date">%d<p class="title">%s</p></a></td>', $day->format("w"), $todayClass, $day->format('Y'), $day->format('m'), $day->format('d'), $day->format('d'), $title);
+            // 土曜日と日曜日の日付の色を変えるため、<td>に$day->format("w")で曜日毎にclass名を変える
+            // 今日の日付がforeachで来た時に、<td>のclass名に$todayClassの'today'をいれる
+            // $titleでtodoテーブルのtitleカラムの値を表示
+            $body .= sprintf('<td class="youbi_%d %s date"><a href="todo_done/index.php?calender_date=%d-%d-%d" class="link_date">%d<p class="title">%s</p></a></td>', $day->format("w"), $todayClass, $day->format('Y'), $day->format('n'), $day->format('j'), $day->format('j'), $title);
         }
         return $body;
     }

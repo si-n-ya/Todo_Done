@@ -9,20 +9,22 @@ if (isset($_SESSION['id']) && $_SESSION['time'] + 1800 > time()) {
     $cal = new \MyApp\Calender();
     $user = $cal->userName;
 } else {
-    header('Location: ./login.php');
+    header('Location: ./logout.php');
     exit;
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Todo_Doneのカレンダー</title>
-    <link rel="stylesheet" href="asset/css/todo.css">
+    <title>Todo_Doneカレンダー</title>
+    <link rel="stylesheet" href="asset/css/todo_done.css">
 </head>
+
 <body>
     <!-- header読み込み -->
     <?php
@@ -59,4 +61,5 @@ if (isset($_SESSION['id']) && $_SESSION['time'] + 1800 > time()) {
         </table>
     </main>
 </body>
+
 </html>

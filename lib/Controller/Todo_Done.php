@@ -105,7 +105,7 @@ class Todo
     /*
       memo.php
     */
-    // todoのideを条件に、todoリストの取得
+    // todoのidを条件に、todoリストの取得
     public function get_todo()
     {
         $sql = "SELECT * FROM todos WHERE id=? AND user_id=?";
@@ -404,11 +404,12 @@ class Done extends Todo
     // 登録したdoneリストをデータベースから取り出す
     public function getAll()
     {
-        $sql = "SELECT * FROM done WHERE user_id=?";
+        $sql = "SELECT d.* FROM done AS d JOIN users AS u ON u.id=d.user_id WHERE calender_date=? AND user_id=?";
         $stmt = $this->_db->prepare($sql);
         $stmt->execute([
-      $_SESSION['id']
-    ]);
+          $_REQUEST['calender_date'],
+          $_SESSION['id']
+        ]);
         return $stmt->fetchAll(\PDO::FETCH_OBJ);
     }
 

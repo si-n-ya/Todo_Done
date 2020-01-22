@@ -2,7 +2,7 @@
 session_start();
 require_once(__DIR__ . '/../config/config.php');
 require_once(__DIR__ . '/../lib/functions.php');
-require_once(__DIR__ . '/../lib/Controller/Todo.php');
+require_once(__DIR__ . '/../lib/Controller/Todo_Done.php');
 
 $todoApp = new \MyApp\Todo();
 
@@ -27,27 +27,28 @@ if (isset($_REQUEST['id']) && isset($_SESSION['id']) && $_SESSION['time'] + 1800
 ?>
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Memoリスト</title>
-    <link rel="stylesheet" href="../asset/css/todo.css">
+    <link rel="stylesheet" href="../asset/css/todo_done.css">
 </head>
+
 <body>
-   <!-- header読み込み -->
-   <?php
+    <!-- header読み込み -->
+    <?php
    $path = '../';
    include(__DIR__ . '/../_inc/header.php');
    ?>
     <div class="memo_container">
         <div class="container">
-            <div class="memo_title_container">
-                <h1 class="main_title memo_main_title">Memoリスト</h1>
-                <p class="btn_box">
-                    <a href="index.php?calender_date=<?= h($get_todo['calender_date']); ?>" class="btn back_color">Todoリストへ戻る</a>
-                </p>
-            </div> <!-- .btn_container -->
+            <p class="btn_box memo_back_box">
+                <a href="index.php?calender_date=<?= h($get_todo['calender_date']); ?>"
+                    class="btn memo_back back_color">Todoリストへ戻る</a>
+            </p>
+            <h1 class="main_title memo_main_title">Memoリスト</h1>
             <p class="explain">『<?= h($get_todo['title']); ?>』に関して、ご自由にお書きください！</p>
             <form action="" method="post" class="form memo_form">
                 <textarea name="memo" class="memo_textarea" rows="10"></textarea>
@@ -80,6 +81,7 @@ if (isset($_REQUEST['id']) && isset($_SESSION['id']) && $_SESSION['time'] + 1800
         </div> <!-- .container -->
     </div> <!-- .memo_container -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="../asset/js/todo.js"></script>
+    <script src="../asset/js/todo_done.js"></script>
 </body>
+
 </html>

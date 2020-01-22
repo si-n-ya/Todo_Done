@@ -145,6 +145,9 @@ body {
   box-sizing: border-box;
 }
 
+/* =================================================================
+  Layout
+==================================================================*/
 .btn_box {
   text-align: center;
 }
@@ -159,10 +162,6 @@ body {
   cursor: pointer;
   color: rgb(8, 8, 8);
 }
-
-/* =================================================================
-  Layout
-==================================================================*/
 
 /*
   header.php
@@ -345,7 +344,7 @@ body {
   margin: 0.5rem 0;
 }
 /*
-  todo/index.php
+  todo_done/index.php
 */
 
 .body_color {
@@ -361,7 +360,15 @@ body {
 
 .btn_container {
   text-align: right;
-  padding-top: 1.5rem;
+  margin-top: 0.75rem;
+}
+
+.calender_date {
+  font-size: 1.2rem;
+  text-align: center;
+  padding-top: 0.5rem;
+  color: #6179e4;
+  text-shadow: 1px 1px 1px #636161;
 }
 
 .back_btn_box {
@@ -389,12 +396,19 @@ body {
 
 .main_title {
   width: 80%;
-  margin: 0% auto;
+  margin: 0 auto;
   text-align: center;
   font-size: 1.5rem;
   font-weight: bold;
   padding: 2rem 0 0.25rem;
-  border-bottom: 2px solid rgb(25, 111, 161);
+}
+
+.todo_main_title {
+  border-bottom: 2px solid #9c103f;
+}
+
+.done_main_title {
+  border-bottom: 2px solid #3016a1;
 }
 
 .form {
@@ -461,6 +475,14 @@ body {
   color: white;
   max-width: 360px;
   margin-left: 1rem;
+}
+
+.design_todo_submit {
+  background-color: #b31449;
+}
+
+.design_done_submit {
+  background-color: #3016a1;
 }
 
 .todo_container,
@@ -625,11 +647,14 @@ body {
   width: 100%;
   height: 100%;
   transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
   transition: transform 0.8s ease-in-out;
+  -webkit-transition: transform 0.8s ease-in-out;
 }
 
 .is_modal_active {
   transform: translate(0);
+  -webkit-transform: translate(0);
 }
 
 .modal_contents {
@@ -637,7 +662,9 @@ body {
   top: 50%;
   left: 50%;
   transform: translateY(-200%);
+  -webkit-transform: translateY(-200%);
   transition: transform 0.8s ease-in-out;
+  -webkit-transition: transform 0.8s ease-in-out;
   width: 95%;
   height: 90%;
   overflow: scroll;
@@ -646,7 +673,9 @@ body {
 
 .is_modal_contents_active {
   transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
   transition: 0.8s;
+  -webkit-transition: 0.8s;
 }
 
 .close_box {
@@ -668,6 +697,7 @@ body {
   height: 20px;
   background-color: #212121;
   transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
   cursor: pointer;
 }
 
@@ -693,14 +723,16 @@ body {
   max-width: 430px;
   margin: 2rem auto 0;
   border-radius: 16px;
-  padding: 1rem 1rem 2rem;
+  padding: 2rem 1rem;
   box-sizing: border-box;
 }
 
 .conf_title {
-  font-size: 1.4rem;
-  text-align: center;
-  margin-bottom: 0.5rem;
+  padding: 0 0 0.25rem;
+}
+
+.conf_form {
+  padding-top: 1rem;
 }
 
 .todo_back {
@@ -730,20 +762,18 @@ body {
   padding-bottom: 2rem;
 }
 
-.memo_title_container {
-  width: 100%;
-  max-width: 800px;
-  margin: 2rem auto 0.5rem;
-  display: flex;
-  display: -webkit-flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+.memo_back_box {
+  text-align: right;
+  margin: 1rem 0;
+}
+
+.memo_back {
+  text-align: center;
 }
 
 .memo_main_title {
-  width: 55%;
   padding: 0;
-  margin: 0;
+  border-bottom: 2px solid #1a9c21;
 }
 
 .explain {
@@ -764,12 +794,8 @@ body {
   font-size: 100%;
 }
 
-.submit_todo_box {
-  text-align: center;
-}
-
 .design_memo_submit {
-  background-color: rgb(83, 78, 78);
+  background-color: #1a9c21;
   color: white;
   max-width: 320px;
 }
@@ -779,6 +805,10 @@ body {
   margin: 0 auto;
   padding: 1.5rem 1rem;
   margin: 2rem 0 2rem;
+}
+
+.list_memo {
+  word-wrap: break-word;
 }
 
 .ed_de_box {
@@ -821,7 +851,7 @@ body {
     padding: 0.1rem 0.3rem;
   }
   /*
-    todo/index.php
+    todo_done/index.php
   */
   .todo_form,
   .done_form {
@@ -934,29 +964,48 @@ body {
     padding: 2rem 0 3rem 1rem;
   }
 
-  .conf_title {
-    margin-bottom: 1.5rem;
-  }
-
-  .todo_back {
-    margin-left: 7.75rem;
+  .conf_form {
+    padding-top: 2.5rem;
   }
 }
 
 @media screen and (min-width: 1200px) {
+  /*
+    todo_done/index.php
+  */
   .main {
     display: flex;
+    display: -webkit-flex;
   }
+
   .todo_all_container {
     width: 50%;
   }
 
   .done_all_container {
     width: 50%;
-    margin-top: 3.4rem;
+    margin-top: 2.6rem;
   }
 
-  .modal {
+  .calender_date {
+    display: inline-block;
+    width: 60%;
+    text-align: right;
+  }
+
+  .btn_container {
+    display: inline-block;
+    width: 30%;
+    text-align: left;
+  }
+
+  /*
+    modal
+  */
+
+  .modal,
+  .close_box,
+  .modal_btn_box {
     display: none;
   }
 
@@ -966,13 +1015,6 @@ body {
     height: 100%;
     width: none;
     transform: translate(0);
-  }
-
-  .close_box {
-    display: none;
-  }
-
-  .modal_btn_box {
-    display: none;
+    -webkit-transform: translate(0);
   }
 }

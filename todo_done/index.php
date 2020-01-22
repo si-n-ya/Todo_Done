@@ -2,7 +2,7 @@
 session_start();
 require_once(__DIR__ . '/../config/config.php');
 require_once(__DIR__ . '/../lib/functions.php');
-require_once(__DIR__ . '/../lib/Controller/Todo.php');
+require_once(__DIR__ . '/../lib/Controller/Todo_Done.php');
 
 if (!isset($_REQUEST['calender_date'])) {
     header('Location: ../');
@@ -46,8 +46,10 @@ if (isset($_SESSION['id']) && $_SESSION['time'] + 1800 > time()) {
     $_SESSION['calender_date'] = $_REQUEST['calender_date'];
     $todos = $todoApp->getAll();
     $done_all = $doneApp->getAll();
+    $day = new DateTime($_REQUEST['calender_date']);
+    $day = $day->format('Y年n月j日');
 } else {
-    header('Location: ../login.php');
+    header('Location: ../logout.php');
 }
 ?>
 
@@ -57,8 +59,9 @@ if (isset($_SESSION['id']) && $_SESSION['time'] + 1800 > time()) {
 <head>
     <meta charset="utf-8">
     <title>Todo_Done</title>
-    <link rel="stylesheet" href="../asset/css/todo.css">
+    <link rel="stylesheet" href="../asset/css/todo_done.css">
 </head>
+
 <body>
     <!-- header読み込み -->
     <?php
@@ -68,6 +71,7 @@ if (isset($_SESSION['id']) && $_SESSION['time'] + 1800 > time()) {
     <main class="main">
         <div class="todo_all_container body_color">
             <div class="container">
+                <p class="calender_date"><?= $day; ?></p>
                 <div class="btn_container">
                     <p class="btn_box back_btn_box back_color_box">
                         <a href="../" class="btn back_color">カレンダーに戻る</a>
@@ -77,7 +81,7 @@ if (isset($_SESSION['id']) && $_SESSION['time'] + 1800 > time()) {
                     </p>
                 </div> <!-- .btn_container -->
                 <!-- Todoリスト -->
-                <h1 class="main_title">Todoリスト</h1>
+                <h1 class="main_title todo_main_title">Todoリスト</h1>
                 <form action="" method="post" class="form todo_form">
                     <dl>
                         <dt class="todo_form_dt"><label for="todo_new_time">何時に？</label></dt>
@@ -98,7 +102,7 @@ if (isset($_SESSION['id']) && $_SESSION['time'] + 1800 > time()) {
                         </dd>
                     </dl>
                     <p class="submit_todo_box">
-                        <input type="submit" class="submit design_done_submit" name="todo_submit" value="Todoを追加">
+                        <input type="submit" class="submit design_todo_submit" name="todo_submit" value="Todoを追加">
                     </p>
                     <input type="hidden" class="token" name="token" value="<?= $_SESSION['token'] ?>">
                 </form>
@@ -129,7 +133,7 @@ if (isset($_SESSION['id']) && $_SESSION['time'] + 1800 > time()) {
                                 echo 'todo_finish';
                             } ?>">
                                         <a href="memo.php?id=<?= h($todo->id); ?>"
-                                            class="link_title"><?= h($todo->title); ?><?= $memo_count > 0 ? '･･･' : ''; ?>
+                                            class="link_title"><?= h($todo->title); ?><?= $memo_count > 0 ? ' &bull; &bull; &bull;' : ''; ?>
                                         </a>
                                     </span>
                                 </div> <!-- .todo_title_box -->
@@ -163,7 +167,7 @@ if (isset($_SESSION['id']) && $_SESSION['time'] + 1800 > time()) {
                     <div class="close_box">
                         <span class="close"></span>
                     </div> <!-- .close_box -->
-                    <h1 class="main_title">Doneリスト</h1>
+                    <h1 class="main_title done_main_title">Doneリスト</h1>
                     <form action="" method="post" class="form done_form">
                         <dl>
                             <dt class="done_form_dt"><label for="done_new_time">何時に？</label></dt>
@@ -225,6 +229,7 @@ if (isset($_SESSION['id']) && $_SESSION['time'] + 1800 > time()) {
         </div> <!-- done_all_container -->
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="../asset/js/todo.js"></script>
+    <script src="../asset/js/todo_done.js"></script>
 </body>
+
 </html>

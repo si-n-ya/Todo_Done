@@ -2,7 +2,7 @@
 session_start();
 require_once(__DIR__ . '/../config/config.php');
 require_once(__DIR__ . '/../lib/functions.php');
-require_once(__DIR__ . '/../lib/Controller/Todo.php');
+require_once(__DIR__ . '/../lib/Controller/Todo_Done.php');
 
 $todoApp = new \MyApp\Todo();
 $doneApp = new \MyApp\Done();
@@ -49,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,14 +60,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php elseif (isset($_REQUEST['done_id'])): ?>
         Doneリストの編集確認
         <?php elseif (isset($_REQUEST['memo_id'])): ?>
-        メモの確認
+        Memoリストの編集確認
         <?php endif; ?>
     </title>
-    <link rel="stylesheet" href="../asset/css/todo.css">
+    <link rel="stylesheet" href="../asset/css/todo_done.css">
 </head>
+
 <body>
-   <!-- header読み込み -->
-   <?php
+    <!-- header読み込み -->
+    <?php
    $path = '../';
    include(__DIR__ . '/../_inc/header.php');
    ?>
@@ -74,8 +76,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="conf_container">
             <!-- todoリストの編集 -->
             <?php if (isset($_REQUEST['todo_id'])): ?>
-            <h1 class="conf_title">Todoリストの編集確認</h1>
-            <form action="" method="post" class="form">
+            <h1 class="main_title todo_main_title conf_title">Todoリストの編集確認</h1>
+            <form action="" method="post" class="form conf_form">
                 <dl>
                     <dt class="todo_form_dt"><label for="conf_time">予定時刻</label></dt>
                     <dd class="todo_time_box">
@@ -102,8 +104,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </form>
             <!-- doneリストの編集 -->
             <?php elseif (isset($_REQUEST['done_id'])): ?>
-            <h1 class="conf_title">Doneリストの編集確認</h1>
-            <form action="" method="post" class="form">
+            <h1 class="main_title done_main_title conf_title">Doneリストの編集確認</h1>
+            <form action="" method="post" class="form conf_form">
                 <dl>
                     <dt class="done_form_dt"><label for="conf_time">予定時刻</label></dt>
                     <dd class="done_time_box">
@@ -130,8 +132,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </form>
             <!-- メモの編集 -->
             <?php elseif (isset($_REQUEST['memo_id'])): ?>
-            <h1 class="conf_title">メモの編集確認</h1>
-            <form action="" method="post" class="form">
+            <h1 class="main_title memo_main_title conf_title">メモの編集確認</h1>
+            <form action="" method="post" class="form conf_form">
                 <div class="memo_conf_box">
                     <textarea name="memo" class="memo_textarea" cols="50" rows="10"><?= h($conf['memo']); ?></textarea>
                     <p class="submit_memo_box">
@@ -146,4 +148,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div> <!-- .conf_container -->
     </div> <!-- .container -->
 </body>
+
 </html>
