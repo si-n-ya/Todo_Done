@@ -51,14 +51,14 @@
 ### Todo_Done(モバイル・タブレットサイズ)
  <img src="https://user-images.githubusercontent.com/56374207/72975204-c0502500-3e13-11ea-9f77-9bd5f192c1b4.jpg" alt="Todoリストのメインページのモバイルサイズです" width="210px">&emsp;&nbsp;<img src="https://user-images.githubusercontent.com/56374207/72975212-c3e3ac00-3e13-11ea-9d4a-8a88e5347042.jpg" alt="Doneリストのメインページのモバイルサイズです" width="210px">
  
-* モバイルまたはタブレットサイズの「Todo_Done」では、仕組みはPCサイズと同じで、通常はTodoリストが表示、Doneリストはモーダルウインドウで表示されます。
+* モバイルまたはタブレットサイズの「Todo_Done」では、仕組みはPCサイズと同じで、通常はTodoリストが表示され、Doneリストはモーダルウインドウで表示されます。
 * Todoリストで緑色のボタンの&quot;Doneリストを表示&quot;をクリックすると、Doneリストがモーダルウインドウで表示されます。 
 
 ### Memoリスト
  <img src="https://user-images.githubusercontent.com/56374207/72975189-b7f7ea00-3e13-11ea-8562-bb6852adac32.jpg" alt="Todo_DoneのMemoリストページです" width="400px">
   
 * 「Memoリスト」ページでは、&quot;Memoを追加&quot;でメモを登録でき、内容を表示します。  
-* 画面左上には、メモをするTodoのタイトルが表示されます。
+* 画面上には、メモをするTodoのタイトルが表示されます。
 * Todo_Done」と同様に、青いボタンの&quot;編集&quot;をクリックすると、「編集確認」ページへ移動し、メモの内容を変更できます。  
  また、赤いボタンの&quot;削除&quot;をクリックすると、登録したメモを削除できます。
 
