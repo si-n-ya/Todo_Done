@@ -1,7 +1,7 @@
 # Todo_Done
 
 ## DEMO
-![output_todo_done](https://user-images.githubusercontent.com/56374207/73046607-23929380-3eb6-11ea-841a-be646cce3015.gif)
+![output_medicine_check2](https://user-images.githubusercontent.com/56374207/73080478-3bdfce00-3f09-11ea-8a64-d39ff54c2bb1.gif)
 
 ## 概要
  「Todo_Done」は、自分がしようと思っていることを記入するTodoリストと、実際に行ったことを記入するDoneリストを同時に見比べられます。  
