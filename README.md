@@ -1,5 +1,8 @@
 # Todo_Done
 
+## DEMO
+![output_todo_done](https://user-images.githubusercontent.com/56374207/73046607-23929380-3eb6-11ea-841a-be646cce3015.gif)
+
 ## 概要
  「Todo_Done」は、自分がしようと思っていることを記入するTodoリストと、実際に行ったことを記入するDoneリストを同時に見比べられます。  
  もしTodoリストに記入した内容と、実際に行ったことが違えば、実際に行ったことをDoneリストに記入することで、予定していたTodoと、実際に行ったDoneをわかりやすく見ることができます。
