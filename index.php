@@ -33,7 +33,7 @@ if (isset($_SESSION['id']) && $_SESSION['time'] + 1800 > time()) {
     ?>
     <main class="container">
         <p class="explain"><?= h($user['name']); ?>さん、カレンダーの日付をクリックして、Todoリストを作ろう！</p>
-        <table border="1" class="table">
+        <table border="0" class="table">
             <thead>
                 <tr>
                     <th class="calender_head"><a href="index.php?t=<?php echo h($cal->prev); ?>">&laquo</a></th>

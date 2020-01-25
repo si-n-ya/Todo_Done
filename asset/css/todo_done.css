@@ -215,13 +215,14 @@ body {
 .table {
   max-width: 400px;
   margin: 1rem auto;
-  border: 1px solid #ddd;
-  border-collapse: collapse;
+  background-color: rgb(204, 202, 202);
+  border-collapse: separate;
+  border-spacing: 1px;
 }
 
 .calender_head,
 .calender_foot {
-  background: #eee;
+  background-color: #eee;
 }
 
 .calender_head {
@@ -237,6 +238,7 @@ body {
 .week {
   padding: 0.5rem 0.1rem;
   text-align: center;
+  background-color: #fff;
 }
 
 .title {
@@ -256,20 +258,21 @@ body {
   color: rgb(47, 47, 216);
 }
 
-.today {
-  background-color: rgb(213, 242, 255);
-}
-
 .date {
   vertical-align: top;
   text-align: center;
   width: 40px;
   height: 45px;
   padding: 0.1rem 0.1rem;
+  background-color: #fff;
 }
 
 .date:hover {
   background-color: rgb(176, 250, 176);
+}
+
+.today {
+  background-color: rgb(213, 242, 255);
 }
 
 .gray {
@@ -792,6 +795,10 @@ body {
   margin: 0 auto;
   margin-bottom: 1.5rem;
   font-size: 100%;
+}
+
+.memeo_error {
+  text-align: center;
 }
 
 .design_memo_submit {

@@ -6,9 +6,11 @@ require_once(__DIR__ . '/../lib/Controller/Todo_Done.php');
 
 $todoApp = new \MyApp\Todo();
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST)) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($_POST['memo'] != '') {
         $todoApp->insert_memo();
+    } else {
+        $error['memo'] = 'blank';
     }
 }
 
@@ -52,6 +54,9 @@ if (isset($_REQUEST['id']) && isset($_SESSION['id']) && $_SESSION['time'] + 1800
             <p class="explain">『<?= h($get_todo['title']); ?>』に関して、ご自由にお書きください！</p>
             <form action="" method="post" class="form memo_form">
                 <textarea name="memo" class="memo_textarea" rows="10"></textarea>
+                <?php if ($error['memo'] == 'blank'): ?>
+                            <p class="error memo_error">メモが入力されていません</p>
+                            <?php endif; ?>
                 <p class="submit_memo_box">
                     <input type="submit" class="submit design_memo_submit" value="メモを追加"></<input>
                 </p>

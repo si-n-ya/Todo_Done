@@ -67,7 +67,7 @@ $(function() {
         "../lib/_ajax.php",
         {
           id: id,
-          mode: "delete",
+          mode: "todo_delete",
           token: $(".token").val()
         },
         function() {
