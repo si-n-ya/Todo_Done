@@ -240,8 +240,8 @@ class Todo
         switch ($_POST['mode']) {
       case 'update':
         return $this->check_update();
-      case 'delete':
-        return $this->_delete();
+      case 'todo_delete':
+        return $this->_todo_delete();
       case 'done_delete':
         return $this->_done_delete();
       case 'memo_delete':
@@ -295,7 +295,7 @@ class Todo
     }
 
     // Todoの削除
-    private function _delete()
+    private function _todo_delete()
     {
         if (!isset($_POST['id'])) {
             throw new \Exception('deleteのidが存在しません');
@@ -303,10 +303,24 @@ class Todo
         try {
             $this->_db->beginTransaction();
 
-            $sql = "DELETE FROM todos WHERE id=?";
+            $sql = "SELECT * FROM memos WHERE todo_id=? AND user_id=?";
             $stmt = $this->_db->prepare($sql);
             $stmt->execute([
-          $_POST['id']
+              $_POST['id'],
+              $_SESSION['id']
+            ]);
+            $result = $stmt->fetch();
+            
+            if (empty($result)) {
+                $sql = "DELETE FROM todos WHERE id=? AND user_id=?";
+                $stmt = $this->_db->prepare($sql);
+            } else {
+                $sql = "DELETE t.*, m.* FROM todos AS t JOIN memos AS m ON t.id=todo_id WHERE todo_id=? AND t.user_id=?";
+                $stmt = $this->_db->prepare($sql);
+            }
+            $stmt->execute([
+          $_POST['id'],
+          $_SESSION['id']
         ]);
 
             $this->_db->commit();

@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // $_SESSION['modal']をoff
         $_SESSION['modal'] = 'off';
 
-        // $_POST['new_todo']が空の時INSERT
+        // $_POST['new_todo']が空ではない時INSERT
         if ($_POST['new_todo'] != '') {
             $todoApp->insert();
         } else {
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // $_SESSION['modal']をon
         $_SESSION['modal'] = 'on';
         
-        // $_POST['new_done']が空の時INSERT
+        // $_POST['new_done']が空ではない時INSERT
         if ($_POST['new_done'] != '') {
             $result = $doneApp->insert();
         } else {
