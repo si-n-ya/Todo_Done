@@ -55,7 +55,7 @@ if (isset($_REQUEST['id']) && isset($_SESSION['id']) && $_SESSION['time'] + 1800
             <form action="" method="post" class="form memo_form">
                 <textarea name="memo" class="memo_textarea" rows="10"></textarea>
                 <?php if ($error['memo'] == 'blank'): ?>
-                            <p class="error memo_error">メモが入力されていません</p>
+                            <p class="error">メモが入力されていません</p>
                             <?php endif; ?>
                 <p class="submit_memo_box">
                     <input type="submit" class="submit design_memo_submit" value="メモを追加"></<input>
