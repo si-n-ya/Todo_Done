@@ -69,7 +69,7 @@
 
 ## Todo_Doneへのリンク
  こちらが実際の制作物になります。  
- __[Todo_Done](https://sinyaweb.com/medicine_check/)__
+ __[Todo_Done](https://sinyaweb.com/todo_done/)__
 
 ## 制作環境
 
